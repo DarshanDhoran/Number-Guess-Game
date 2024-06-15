@@ -1,43 +1,51 @@
-Random Password Generator
+# Number Guessing Game
 
-This is a simple Python script that generates a random password of a specified length. The generated password contains a mix of uppercase and lowercase letters, digits, and punctuation characters.
+This is a simple Python script for a number guessing game. The game generates a random number between 1 and 10, and the user has to guess the number. The user can also quit the game at any time by pressing 'Q'.
 
-How It Works
+## How It Works
 
-Import Modules: The script imports the random and string modules. 
-    - `random`: This module implements pseudo-random number generators for various distributions.
-    - `string`: This module contains a collection of string constants which include ASCII letters, digits, and punctuation.
+1. **Import Module**: The script imports the `random` module to generate a random number.
 
-2Password Length: The variable `pass_len` is set to `12`, meaning the generated password will be 12 characters long. You can change this value to generate passwords of different lengths.
+2. **Generate Target Number**: 
+    - `random.randint(1, 10)` generates a random integer between 1 and 10 (inclusive).
+    - This number is stored in the variable `target`.
 
-3.Character Set: The variable `charValues` combines:
-    - `string.ascii_letters`: All lowercase and uppercase letters.
-    - `string.digits`: All decimal digit characters.
-    - `string.punctuation`: All printable ASCII punctuation characters.
+3. **Game Loop**:
+    - The script enters a `while True` loop, which runs indefinitely until broken by a condition.
+    - The user is prompted to guess the number or quit by pressing 'Q'.
+    - If the user enters 'Q', the game breaks out of the loop and ends.
+    - The user's input is converted to an integer for comparison with the target number.
+    - If the user's guess matches the target number, a success message is displayed, and the loop is broken.
+    - If the guess is smaller or larger than the target, appropriate hints are provided.
 
-4.Password Generation: 
-    - An empty string `password` is initialized.
-    - A for-loop runs `pass_len` times, and during each iteration, a random character from `charValues` is appended to the `password`.
+4. **Game Over**: Once the loop ends, a "Game Over" message is printed.
 
-5.Output: The generated password is printed to the console.
+## Usage
 
-
-    1.Run the Script: To generate a random password, simply run the script using a Python interpreter.
-
-    python random_password_generator.py
+1. **Run the Script**: To play the game, run the script using a Python interpreter.
 
 
-    2.Customize: If you need a password of a different length, change the value of `pass_len`.
+python number_guessing_game.py
 
-    3.Security Note: While this script can generate random passwords, for high-security applications, consider using more robust libraries      such as secrets which is designed for cryptographic purposes.
 
-Example Output
+2. **Play**: Enter your guess when prompted. If you wish to quit the game, press 'Q'.
 
-Your Password is : &Ww5B@3m^zA%
+## Example Output
 
-Contributing
+```
+Guess the Number or Quit(press Q): 5
+Number is Small...
+Guess the Number or Quit(press Q): 8
+Number is Big...
+Guess the Number or Quit(press Q): 7
+Success: Correct Guess!
+-----Game Over-----
+```
+
+## Contributing
 
 If you have suggestions for improvements, feel free to submit a pull request or open an issue.
 
+---
 
-Enjoy using the Random Password Generator! Stay secure.
+Enjoy playing the Number Guessing Game!
